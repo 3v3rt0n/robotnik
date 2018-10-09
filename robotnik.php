@@ -42,6 +42,7 @@ echo "<br />Venda: ".$coin_sell_price;
 echo "<br /><br /><b>Volume</b>";
 echo "<br />Coins: ".$coin_volume;
 echo "<br />BTC: ".$coin_btc_volume;
+
 /* ---------------------------------------------------------- */
 /* ------------ Verificar possibilidade de trade ------------ */
 /* ---- Calcular margem entre preco de venda e de compra ---- */

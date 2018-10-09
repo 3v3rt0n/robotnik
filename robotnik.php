@@ -4,23 +4,28 @@
 /* ------------------------------------------- */
 $pair = "DXO/BTC";
 $ticker = "DXO";
-$url_dxo_price = "https://graviex.net/api/v2/tickers/dxobtc.json";
-//$url_btc_price = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
 $coin_price=0;
 $btc_price=0;
 $open_positions=0;
-/* -------------- */
-/* dados de trade */
-/* -------------- */
+
+/* ---------------------- */
+/* --- dados de trade --- */
+/* ---------------------- */
+//$url_btc_price = "https://api.coindesk.com/v1/bpi/currentprice.json";
+$url_coin_price = "https://graviex.net/api/v2/tickers/dxobtc.json";
 $variacao_minima = 3.5; //3.5%
-$max_btc_capital = 0.01;//0.01 BTC
+$max_btc_capital = 0.01; //0.01 BTC
 $trades = 10; //open 10 positions
-/* -------------- */
+
+/* ----------------------- */
+/* -- Getting prices -- */
+/* ----------------------- */
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch,CURLOPT_TIMEOUT,20);
-curl_setopt($ch, CURLOPT_URL, $url_dxo_price);
+curl_setopt($ch, CURLOPT_URL, $url_coin_price);
 $result = curl_exec($ch);
 curl_close($ch);
 $obj = json_decode($result);

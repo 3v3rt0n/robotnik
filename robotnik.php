@@ -39,7 +39,7 @@ echo "<br />Pair: ".$pair;
 echo "<br /><br /><b>Ofertas</b>";
 echo "<br />Compra: ".$coin_buy_price;
 echo "<br />Venda: ".$coin_sell_price;
-echo "<br /><br /><b>Volume</b>";
+echo "<br /><br /><b>Volume last 24h</b>";
 echo "<br />Coins: ".$coin_volume;
 echo "<br />BTC: ".$coin_btc_volume;
 
@@ -49,9 +49,9 @@ echo "<br />BTC: ".$coin_btc_volume;
 /* ---------------------------------------------------------- */
 $variacao_maxima = round((($coin_sell_price * 100)/$coin_buy_price)-100,2);
 echo "<br /><br />Variacao Maxima: ".$variacao_maxima." %";
-/* Se a variacao maxima for maior do que 3%, calcular */
+/* Se a variacao maxima for maior do que 3%, continua operacoes */
 if($variacao_maxima > $variacao_minima){
-	//verificar qtde ordens abertas
+	//contar qtde ordens abertas
 	
 	if($open_positions <= $trades){
 		

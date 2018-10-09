@@ -1,15 +1,21 @@
 <?php
+/* ------------------------------------------- */
+/* ------------ Trader Bot v1.0 ---------------*/
+/* ------------------------------------------- */
 $pair = "DXO/BTC";
 $ticker = "DXO";
 $url_dxo_price = "https://graviex.net/api/v2/tickers/dxobtc.json";
 //$url_btc_price = "https://api.coindesk.com/v1/bpi/currentprice.json";
 $coin_price=0;
 $btc_price=0;
+$open_positions=0;
+/* -------------- */
 /* dados de trade */
+/* -------------- */
 $variacao_minima = 3.5; //3.5%
 $max_btc_capital = 0.01;//0.01 BTC
 $trades = 10; //open 10 positions
-/* */
+/* -------------- */
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

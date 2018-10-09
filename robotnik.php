@@ -42,7 +42,10 @@ echo "<br />Venda: ".$coin_sell_price;
 echo "<br /><br /><b>Volume</b>";
 echo "<br />Coins: ".$coin_volume;
 echo "<br />BTC: ".$coin_btc_volume;
-//calcular margem entre preco de venda e de compra
+/* ---------------------------------------------------------- */
+/* ------------ Verificar possibilidade de trade ------------ */
+/* ---- Calcular margem entre preco de venda e de compra ---- */
+/* ---------------------------------------------------------- */
 $variacao_maxima = round((($coin_sell_price * 100)/$coin_buy_price)-100,2);
 echo "<br /><br />Variacao Maxima: ".$variacao_maxima." %";
 /* Se a variacao maxima for maior do que 3%, calcular */
